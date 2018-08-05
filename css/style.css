@@ -9,6 +9,10 @@
 	-& many more!
 */
 /*------------------------------------------------*/
+.responsive {
+    width: 100%;
+    height: auto;
+}
 
 body{
 	font-family:'Oswald', Arial;
