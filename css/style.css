@@ -87,7 +87,7 @@ margin: auto;
 body{
 	font-family:'Oswald', Arial;
 	color:#fff;
-	background:url(/images/background.jpg) top center no-repeat #000;
+	background:url(../images/background.jpg) top center no-repeat #000;
     background-size: 100% auto;
 }
 
