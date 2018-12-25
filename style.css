@@ -1,0 +1,327 @@
+/*------------------------------------------------*/
+/* Basic styles */ 
+/* Designed and coded by HeroWP.com*/
+/* Don't forget to visit us daily for tons of freebies:
+	-PSD Templates
+	-Wordpress Plugins
+	-Wordpess Themes
+	-HTML Designs
+	-& many more!
+*/
+/*------------------------------------------------*/
+
+.container2 {
+
+  position: relative;
+margin: auto;
+	width: 100%;
+
+    height: auto;
+	
+}
+
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container2:hover .responsive {
+  opacity: 0.3;
+}
+
+.container2:after {
+  content: "";
+  position: absolute;
+  top: 8%;
+  right: 23%;
+  width: 2%;
+  height: 90%;
+  opacity: 0;
+  transform: rotate(0deg);
+  background: rgba(255, 255, 255, 0.13);
+  background: linear-gradient( to right, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.13) 77%, rgba(255, 255, 255, 0.5) 92%, rgba(255, 255, 255, 0.0) 100%);
+  animation: shine 1s 2.5s ;
+}
+
+@keyframes shine {
+  to {
+    opacity: 0.9;
+    right: 72%;
+  }
+}
+
+.container2:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.responsive {
+-webkit-box-reflect:below -1px
+    -webkit-gradient(linear, left top, left bottom, from(transparent),
+    color-stop(87%, transparent) , to(rgba(250, 250, 250, 0.5)));
+    width: 100%;
+	max-width:600px;
+    height: auto;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+	opacity: 1;
+
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+
+
+body{
+	font-family:'Oswald', Arial;
+	color:#fff;
+	background:url(images/background.jpg) top center no-repeat #000;
+    background-size: 100% auto;
+}
+
+.overlay{
+	background:rgba(0,0,0,0.35);
+	position:absolute;
+	left:0;
+	top:0;
+	bottom:0;
+	right:0;
+	width:100%;
+	height:120%;
+	z-index:1;
+	overflow:hidden;
+}
+
+@media (min-width: 1200px){
+	.container {
+		width:1170px;
+	}
+}
+
+#wrap{
+	width:100%;
+	height:100%;
+	display:table;
+	position:relative;
+	z-index:10000;
+}
+
+#defaultCountdown{
+	z-index:2;
+	margin:0 auto;
+	display:table;
+	position:relative;
+}
+
+.countdown-row {
+	margin:0 auto;
+	width:100%;
+	display:table;
+	text-align:center;
+}
+
+.countdown-section {
+	display: block;
+	float: left;
+	text-align: center;
+	width:120px;
+	height:120px;
+	border-radius:50%;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	border:solid 1px #fff;
+	text-align:center;
+	margin:40px 20px;
+}
+
+.countdown-amount {
+    font-size: 60px;
+	font-weight:700;
+	line-height:120px;
+}
+.countdown-period {
+    display: block;
+	line-height:60px;
+	color:#ff9c00;
+	font-size:18px;
+	font-weight:100;
+}
+
+.image-align{
+	margin:0 auto;
+	text-align:center;
+	display:block;
+	padding-top: 0px;
+	 width: 41%;
+	max-width: 850px;
+    height: auto;
+}
+
+h1{
+	font-size: 36px;
+	font-weight: 300;
+	text-align: center;
+}
+
+h1 span{
+	font-size:32px;
+}
+
+.yellow{
+	color: #FFFFFF;
+	font-size: 56px;
+}
+
+p{
+	font-size:16px;
+
+	text-align:center;
+	font-weight:100;
+}
+
+form{
+	margin:0 auto;
+	display:table;
+	margin-top:50px;
+}
+
+input[type="text"]{
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	background:rgba(255,255,255,.1);
+	-webkit-background-clip: padding-box !important;
+	background-clip: padding-box !important;
+	border:none;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	height:53px;
+	color:#fff;
+	font-family:'Oswald', Arial;
+	font-size:16px;
+	padding-left:20px;
+	width:265px;
+}
+
+input[type="submit"]{
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	font-family: 'Oswald', Arial;
+	background: #ff9c00;
+	color: #000;
+	border: none;
+	font-size: 24px;
+	font-weight: 500;
+	padding: 12px 30px;
+	position: relative;
+	top: 3px;
+	left: -10px;
+	-webkit-transition: all .3s ease;
+	-moz-transition: 	all .3s ease;
+	-ms-transition: 	all .3s ease;
+	-o-transition: 		all .3s ease;
+	transition: 		all .3s ease;
+}
+
+input[type="submit"]:hover{
+	color: #FFF;
+}
+
+a{
+color:#fff;
+text-decoration:underline;
+}
+
+p.copyright{
+	font-family: 'Oswald', Arial;
+	color:#ff9c00;
+	font-size: 9px;
+
+margin-top:5px;
+}
+
+
+/*------------------------------------------------*/
+/* Responsive styles */
+/*------------------------------------------------*/
+
+@media (min-width: 561px) and (max-width: 720px) {
+	
+	.countdown-section {
+		margin:5px;
+	}
+
+}
+
+@media (max-width: 600px){
+	
+	.countdown-section {
+		display: block;
+		float: left;
+		text-align: center;
+		width:75px;
+		height:75px;
+		margin:6px;
+	}
+	
+	.countdown-amount {
+		font-size: 32px;
+		font-weight:700;
+		line-height:74px;
+	}
+	
+}
+
+@media (max-width: 420px){
+	
+	.countdown-section {
+		display: block;
+		float: left;
+		text-align: center;
+		width:56px;
+		height:56px;
+		margin:2px;
+	}
+	
+	.countdown-amount {
+		font-size: 24px;
+		font-weight:700;
+		line-height:58px;
+	}
+	
+	.image-align{
+
+	}
+	
+	h1,.yellow{
+		font-size:32px;
+	}	
+	
+	h1 span{
+	font-size:18px;
+	}
+	
+	input[type="text"]{
+		width:150px;
+		font-size:14px;
+		padding-left:5px;
+	}	
+	
+	input[type="submit"]{
+		left:-3px;
+		top:5px;
+	}
+	
+}
