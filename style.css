@@ -84,12 +84,7 @@ margin: auto;
 
 
 
-body{
-	font-family:'Oswald', Arial;
-	color:#fff;
-	background:url(/images/background.jpg) top center no-repeat #000;
-    background-size: 100% auto;
-}
+
 
 .overlay{
 	background:rgba(0,0,0,0.35);
