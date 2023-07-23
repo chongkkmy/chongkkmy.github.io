@@ -18,22 +18,22 @@
       height: auto;
     }
 
-    .img1-container {
+    .img-container {
       width: 100%;
       height: 100vh; /* Set the container height to the viewport height */
       overflow: hidden; /* Hide any overflow beyond the container */
       position: relative; /* Establish a stacking context for absolute positioning */
     }
 
-    .img1 {
+    .img1, .img2 {
       width: 100%;
       height: auto;
-      position: absolute; /* Position the image absolutely within the container */
-      top: 0; /* Start the image at the top of the container */
-      animation: slideDown 80s linear infinite; /* Make the animation loop infinitely */
+      position: absolute; /* Position the images absolutely within the container */
+      top: 0; /* Start the images at the top of the container */
+      animation: scrollImage 40s linear infinite; /* Adjust animation duration as needed */
     }
 
-    @keyframes slideDown {
+    @keyframes scrollImage {
       0% {
         transform: translateY(0);
       }
@@ -50,8 +50,9 @@
 
 <!-- The actual content, hidden by default -->
 <div id="content" style="display: none;">
-  <div class="img1-container">
-    <img src="https://raw.githubusercontent.com/chongkkmy/chongkkmy.github.io/master/images/BG_wedding.JPG" class="img1">
+  <div class="img-container">
+    <img src="https://raw.githubusercontent.com/chongkkmy/chongkkmy.github.io/master/images/BG_wedding.JPG" alt="自动播放图片" class="img1">
+    <img src="https://raw.githubusercontent.com/chongkkmy/chongkkmy.github.io/master/images/BG_wedding.JPG" alt="自动播放图片" class="img2">
   </div>
 </div>
 
