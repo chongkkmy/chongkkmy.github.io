@@ -32,18 +32,6 @@
   
   </audio>
 
-  <script>
-    var audioElement = document.getElementById("audio");
-    var isScrolling;
 
-    // 监听滚动事件，当用户滚动页面时暂停音乐
-    window.addEventListener("scroll", function() {
-      audioElement.pause();
-      clearTimeout(isScrolling);
-      isScrolling = setTimeout(function() {
-        audioElement.play();
-      }, 100);
-    });
-  </script>
 </body>
 </html>
