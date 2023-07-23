@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
- 
   <title>Han & Faith E Invitation</title>
   <style>
     body {
-     background-color: #620001;
+      background-color: #620001;
       overflow: hidden;
       margin: 0;
       padding: 0;
- 
     }
-   
-    button{
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    background-color: #620001;
-         border: 0.5px solid #620001; 
-     width: 100%;
+
+    button {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      background-color: #620001;
+      border: 0.5px solid #620001;
+      width: 100%;
       height: auto;
     }
+
+    .img1-container {
+      width: 100%;
+      height: 100vh; /* Set the container height to the viewport height */
+      overflow: hidden; /* Hide any overflow beyond the container */
+      position: relative; /* Establish a stacking context for absolute positioning */
+    }
+
     .img1 {
       width: 100%;
       height: auto;
-      animation: slideDown 80s linear infinite;
+      position: absolute; /* Position the image absolutely within the container */
+      top: 0; /* Start the image at the top of the container */
+      animation: slideDown 80s linear infinite; /* Make the animation loop infinitely */
     }
-    
-    .center {
-   width: 100%;
-      height: auto;
-}
 
     @keyframes slideDown {
       0% {
@@ -42,13 +45,14 @@
 </head>
 <body>
 
-
 <!-- The start button --->
 <button id="startbtn"> <img src="https://raw.githubusercontent.com/chongkkmy/chongkkmy.github.io/master/images/Header_wedding.jpg" alt="Paris" class="center"> </button>
 
 <!-- The actual content, hidden by default -->
 <div id="content" style="display: none;">
-      <img src="https://raw.githubusercontent.com/chongkkmy/chongkkmy.github.io/master/images/BG_wedding.JPG" alt="自动播放图片" class="img1">
+  <div class="img1-container">
+    <img src="https://raw.githubusercontent.com/chongkkmy/chongkkmy.github.io/master/images/BG_wedding.JPG" class="img1">
+  </div>
 </div>
 
 <!-- This is displayed when the user has pressed the start button, but the music is still loading -->
@@ -59,28 +63,26 @@
 <!-- The music. It is started by the Javascript -->
 <audio id="music" src="https://raw.githubusercontent.com/chongkkmy/chongkkmy.github.io/master/images/BG_wedding.mp3" style="display: none;" loop></audio>
 
-
 <p id="demo">
 
 <script>
+  const startbtn = document.getElementById("startbtn");
+  const content = document.getElementById("content");
+  const loader = document.getElementById("loader");
+  const music = document.getElementById("music");
 
-const startbtn = document.getElementById("startbtn");
-const content = document.getElementById("content");
-const loader = document.getElementById("loader");
-const music = document.getElementById("music");
-
-//Add an event listner to the start button
-startbtn.addEventListener("click", () => {
-  //Show the loader and hide the button
-  loader.style.display = "";
-  startbtn.style.display = "none";
-  //Wait for the music to start
-  music.play().then(() => {
-    //Hide the loader and show the content
-    content.style.display = "";
-    loader.style.display = "none";
+  // Add an event listener to the start button
+  startbtn.addEventListener("click", () => {
+    // Show the loader and hide the button
+    loader.style.display = "";
+    startbtn.style.display = "none";
+    // Wait for the music to start
+    music.play().then(() => {
+      // Hide the loader and show the content
+      content.style.display = "";
+      loader.style.display = "none";
+    });
   });
-});
 </script>
 
 </body>
