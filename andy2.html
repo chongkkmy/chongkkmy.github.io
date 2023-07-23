@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Han & Faith E Invitation</title>
+  <style>
+    body {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    #container {
+      position: relative;
+      height: calc(100% - 60px); /* 设置容器高度为整个视口高度减去按钮高度，使图片在按钮上面展示 */
+      overflow: hidden; /* 隐藏超出容器部分的内容 */
+    }
+
+    #image {
+      width: 100%;
+      height: auto; /* 设置图片高度自动，宽度100%，保持宽高比例 */
+      animation: slideDown 55s linear infinite;
+    }
+
+    @keyframes slideDown {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+    /* 播放按钮样式 */
+    #playButton {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      background-color: rgba(255, 255, 255, 0.8); /* 使用RGBA颜色设置透明度 */
+      border: none;
+      border-radius: 50%;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1; /* 确保按钮显示在图片上面 */
+    }
+
+    /* 设置背景图片样式 */
+    body {
+      background-image: url('https://raw.githubusercontent.com/chongkkmy/chongkkmy.github.io/master/images/BG_wedding.JPG');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <img id="image" src="https://raw.githubusercontent.com/chongkkmy/chongkkmy.github.io/master/images/BG_wedding.JPG" alt="自动播放图片" />
+  </div>
+  <button id="playButton">播放</button>
+  <audio id="audio" controls autoplay>
+    <source src="https://raw.githubusercontent.com/chongkkmy/chongkkmy.github.io/master/images/BG_wedding.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    var containerElement = document.getElementById("container");
+    var imageElement = document.getElementById("image");
+    var audioElement = document.getElementById("audio");
+    var playButton = document.getElementById("playButton");
+    var isScrolling;
+
+    // 自动往下滚动图片的函数
+    function scrollImage() {
+      imageElement.style.transform = "translateY(0)"; // 将图片位置重置
+      imageElement.style.transition = "none"; // 禁用过渡效果
+      containerElement.scrollTop = 0; // 将容器滚动条位置重置
+      void imageElement.offsetWidth; // 触发重绘，避免直接应用动画
+      imageElement.style.transition = "transform 40s linear infinite"; // 启用动画过渡
+      imageElement.style.transform = "translateY(-100%)"; // 设置图片滚动动画
+    }
+
+    // 监听滚动事件，当用户滚动页面时暂停音乐
+    window.addEventListener("scroll", function() {
+      audioElement.pause();
+      clearTimeout(isScrolling);
+      isScrolling = setTimeout(function() {
+        audioElement.play();
+      }, 100);
+    });
+
+    // 点击按钮时播放音乐
+    playButton.addEventListener("click", function() {
+      audioElement.play();
+    });
+
+    // 页面加载后自动滚动图片
+    window.addEventListener("load", function() {
+      scrollImage();
+    });
+  </script>
+</body>
+</html>
