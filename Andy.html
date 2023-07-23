@@ -11,11 +11,18 @@
       padding: 0;
     }
 
-    img {
+    .img1 {
       width: 100%;
       height: auto;
       animation: slideDown 40s linear infinite;
     }
+    
+    .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
 
     @keyframes slideDown {
       0% {
@@ -29,14 +36,13 @@
 </head>
 <body>
 
-<h1>Wedding Test</h1>
 
 <!-- The start button --->
-<button id="startbtn">Start</button>
+<button id="startbtn"> <img src="https://raw.githubusercontent.com/chongkkmy/chongkkmy.github.io/master/images/Header_wedding.jpg" alt="Paris" class="center"> </button>
 
 <!-- The actual content, hidden by default -->
 <div id="content" style="display: none;">
-      <img src="https://raw.githubusercontent.com/chongkkmy/chongkkmy.github.io/master/images/BG_wedding.JPG" alt="自动播放图片" />
+      <img src="https://raw.githubusercontent.com/chongkkmy/chongkkmy.github.io/master/images/BG_wedding.JPG" alt="自动播放图片" class="img1">
 </div>
 
 <!-- This is displayed when the user has pressed the start button, but the music is still loading -->
