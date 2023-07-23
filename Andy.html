@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+ 
   <title>Han & Faith E Invitation</title>
   <style>
     body {
+    background-color: #620001;
       overflow: hidden;
       margin: 0;
       padding: 0;
@@ -26,16 +28,48 @@
   </style>
 </head>
 <body>
-  <img src="images/BG_wedding.JPG" alt="自动播放图片" />
+
+<h1>Wedding Test</h1>
+
+<!-- The start button --->
+<button id="startbtn">Start</button>
+
+<!-- The actual content, hidden by default -->
+<div id="content" style="display: none;">
+      <img src="https://raw.githubusercontent.com/chongkkmy/chongkkmy.github.io/master/images/BG_wedding.JPG" alt="自动播放图片" />
+</div>
+
+<!-- This is displayed when the user has pressed the start button, but the music is still loading -->
+<div id="loader" style="display: none;">
+  <p>Loading ...</p>
+</div>
+
+<!-- The music. It is started by the Javascript -->
+<audio id="music" src="https://raw.githubusercontent.com/chongkkmy/chongkkmy.github.io/master/images/BG_wedding.mp3" style="display: none;" loop></audio>
 
 
+<p id="demo">
 
+<script>
 
-<audio autoplay loop src="images/BG_wedding.mp3"></audio>
+const startbtn = document.getElementById("startbtn");
+const content = document.getElementById("content");
+const loader = document.getElementById("loader");
+const music = document.getElementById("music");
 
-
-
-
+//Add an event listner to the start button
+startbtn.addEventListener("click", () => {
+  //Show the loader and hide the button
+  loader.style.display = "";
+  startbtn.style.display = "none";
+  //Wait for the music to start
+  music.play().then(() => {
+    //Hide the loader and show the content
+    content.style.display = "";
+    loader.style.display = "none";
+  });
+});
+</script>
 
 </body>
 </html>
